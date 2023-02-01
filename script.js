@@ -20,7 +20,6 @@ const getUsers = async () => {
       </div>`;
     }
 };
-getUsers();
 
 const user = async (name1) => {
     const response = await fetch(url, {
@@ -35,4 +34,14 @@ const submit = () => {
     const name = document.querySelector("#name");
     const name1 = { name: name.value };
     user(name1);
+    newDiv(name1);
 };
+
+const newDiv = (name1) => {
+    usersDiv.innerHTML += `  <div>
+        
+        new-name : ${name1.name}
+      </div>`;
+};
+submit();
+getUsers();
